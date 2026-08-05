@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saqib — AI Portfolio Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="sk-toggle" title="Chat with my AI assistant">💬</button>
+
+  <div class="project-info">
+    <header class="hero">
+      <h1>Profilo Agent</h1>
+      <p>An intelligent, interactive AI Portfolio Assistant designed to showcase projects, skills, and professional experience dynamically.</p>
+    </header>
+    
+    <section class="features">
+      <h2>About This Project</h2>
+      <p>Profilo Agent is an open-source conversational interface that lets visitors interact with an AI to learn about a developer's portfolio. Instead of reading through static pages, users can ask questions and get instant, context-aware answers.</p>
+      
+      <ul>
+        <li><strong>Interactive AI Chat:</strong> Powered by advanced language models to provide accurate information.</li>
+        <li><strong>FastAPI Backend:</strong> Robust and fast Python backend serving API requests.</li>
+        <li><strong>Context-Aware:</strong> Maintains conversation history for a natural chat experience.</li>
+        <li><strong>Easily Customizable:</strong> Built to be deployed anywhere and adapted to any personal portfolio.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div id="sk-window">
+    <div id="sk-header">Ask my AI assistant</div>
+    <div id="sk-messages">
+      <div class="sk-msg sk-agent">
+        Hi! I'm the AI assistant for this portfolio project. Ask me about the features, technical stack, or how it works!
+      </div>
+    </div>
+    <div id="sk-input-row">
+      <input id="sk-input" type="text" placeholder="Type a message..." />
+      <button id="sk-send">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
