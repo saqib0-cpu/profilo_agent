@@ -3,41 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <title>Saqib — AI Portfolio Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Modern premium fonts: Outfit for Headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button id="sk-toggle" title="Chat with my AI assistant">💬</button>
+  <!-- Animated Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <button id="sk-toggle" title="Chat with my AI assistant">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+  </button>
 
   <div class="project-info">
-    <header class="hero">
-      <h1>Profilo Agent</h1>
-      <p>An intelligent, interactive AI Portfolio Assistant designed to showcase projects, skills, and professional experience dynamically.</p>
+    <header class="hero fade-in-up" style="animation-delay: 0.1s;">
+      <div class="badge">Next-Gen Portfolio</div>
+      <h1>Profilo <span class="text-gradient">Agent</span></h1>
+      <p>An intelligent, interactive AI Assistant designed to showcase projects, skills, and professional experience dynamically.</p>
     </header>
     
-    <section class="features">
-      <h2>About This Project</h2>
-      <p>Profilo Agent is an open-source conversational interface that lets visitors interact with an AI to learn about a developer's portfolio. Instead of reading through static pages, users can ask questions and get instant, context-aware answers.</p>
+    <section class="features glass-panel fade-in-up" style="animation-delay: 0.3s;">
+      <div class="features-header">
+        <h2>About This Project</h2>
+        <p>Profilo Agent is an open-source conversational interface that lets visitors interact with an AI to learn about a developer's portfolio. Instead of reading through static pages, users can ask questions and get instant, context-aware answers.</p>
+      </div>
       
-      <ul>
-        <li><strong>Interactive AI Chat:</strong> Powered by advanced language models to provide accurate information.</li>
-        <li><strong>FastAPI Backend:</strong> Robust and fast Python backend serving API requests.</li>
-        <li><strong>Context-Aware:</strong> Maintains conversation history for a natural chat experience.</li>
-        <li><strong>Easily Customizable:</strong> Built to be deployed anywhere and adapted to any personal portfolio.</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Interactive AI Chat</h3>
+          <p>Powered by advanced language models to provide accurate, dynamic information.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>FastAPI Backend</h3>
+          <p>Robust and blazing-fast Python backend serving API requests asynchronously.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Context-Aware</h3>
+          <p>Maintains full conversation history for a seamless, natural chat experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Customizable</h3>
+          <p>Built to be deployed anywhere and easily adapted to any personal portfolio.</p>
+        </div>
+      </div>
     </section>
   </div>
 
   <div id="sk-window">
-    <div id="sk-header">Ask my AI assistant</div>
+    <div id="sk-header">
+      <div class="agent-avatar">
+        <div class="agent-status"></div>
+      </div>
+      <div class="agent-meta">
+        <div class="agent-title">AI Assistant</div>
+        <div class="agent-subtitle">Online and ready</div>
+      </div>
+    </div>
     <div id="sk-messages">
       <div class="sk-msg sk-agent">
         Hi! I'm the AI assistant for this portfolio project. Ask me about the features, technical stack, or how it works!
       </div>
     </div>
     <div id="sk-input-row">
-      <input id="sk-input" type="text" placeholder="Type a message..." />
-      <button id="sk-send">Send</button>
+      <input id="sk-input" type="text" placeholder="Type your message..." autocomplete="off" />
+      <button id="sk-send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      </button>
     </div>
   </div>
 
