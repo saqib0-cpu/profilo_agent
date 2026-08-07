@@ -9,13 +9,20 @@ const sendBtn = document.getElementById('sk-send');
 
 const sessionId = 'visitor-' + Math.random().toString(36).slice(2);
 
+const closeBtn = document.getElementById('sk-close');
+
 function openChat() {
   chatWindow.style.display = 'flex';
   inputEl.focus();
+  // On mobile, hide the toggle button when chat is open to prevent overlap
+  if (window.innerWidth <= 600) {
+    toggleBtn.style.display = 'none';
+  }
 }
 
 function closeChat() {
   chatWindow.style.display = 'none';
+  toggleBtn.style.display = 'flex';
 }
 
 toggleBtn.addEventListener('click', () => {
@@ -25,6 +32,10 @@ toggleBtn.addEventListener('click', () => {
     openChat();
   }
 });
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', closeChat);
+}
 
 openChat();
 
