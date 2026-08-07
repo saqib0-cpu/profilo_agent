@@ -432,7 +432,7 @@ h1, h2, h3 {
 }
 
 /* =========================================
-   Utility Animations
+   Utility Animations & Mobile Styles
 ========================================= */
 .fade-in-up {
   opacity: 0;
@@ -444,20 +444,51 @@ h1, h2, h3 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+#sk-close {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+#sk-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 3.5rem; }
+  .project-info { margin: 40px auto; }
+}
+
 @media (max-width: 600px) {
-  .hero h1 { font-size: 3rem; }
-  .glass-panel { padding: 32px 24px; }
+  .hero h1 { font-size: 2.8rem; }
+  .glass-panel { padding: 32px 20px; }
+  .features-grid { grid-template-columns: 1fr; }
+  
   #sk-window {
     bottom: 0;
     right: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100%;
+    height: 100dvh;
+    max-width: 100%;
+    max-height: 100dvh;
     border-radius: 0;
+    border: none;
+    box-shadow: none;
   }
+  
   #sk-toggle {
     bottom: 20px;
     right: 20px;
+    z-index: 9998;
+  }
+
+  .mobile-only {
+    display: block !important;
   }
 }
