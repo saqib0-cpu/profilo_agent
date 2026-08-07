@@ -10,10 +10,6 @@ from app.utils import clamp_text
 router = APIRouter()
 
 
-@router.get("/")
-def root():
-    return {"status": "Server Status: running"}
-
 
 @router.get("/health")
 def health():
