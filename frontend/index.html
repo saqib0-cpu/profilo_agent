@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Saqib — AI Portfolio Assistant</title>
   <!-- Modern premium fonts: Outfit for Headings, Inter for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +65,13 @@
       <div class="agent-avatar">
         <div class="agent-status"></div>
       </div>
-      <div class="agent-meta">
+      <div class="agent-meta" style="flex: 1;">
         <div class="agent-title">AI Assistant</div>
         <div class="agent-subtitle">Online and ready</div>
       </div>
+      <button id="sk-close" class="mobile-only" title="Close chat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
     </div>
     <div id="sk-messages">
       <div class="sk-msg sk-agent">
