@@ -1,6 +1,14 @@
+import sys
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from app.api.routes import router
 
 app = FastAPI(title="Saqib AI Portfolio Assistant")
@@ -22,5 +30,11 @@ app.add_middleware(
 
 app.include_router(router)
 
-# Serves frontend/ at /static if you want FastAPI to host the widget too
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+# Serves frontend/ at the root so that visiting the URL opens the UI directly
+app.mount("/", StaticFiles(directory=str(PROJECT_ROOT / "frontend"), html=True), name="frontend")
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)
